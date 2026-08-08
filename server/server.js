@@ -15,9 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL
-      ? process.env.CLIENT_URL.split(",")
-      : "*",
+    origin: process.env.CLIENT_URL?.split(",") || "*",
     credentials: false,
   })
 );
@@ -52,10 +50,10 @@ app.use((err, req, res, next) => {
   });
 });
 
-// MongoDB connection
-await connectDB();
+connectDB().catch((err) => {
+  console.error("Database connection failed:", err.message);
+});
 
-// Local development only
 if (process.env.VERCEL !== "1") {
   const port = process.env.PORT || 5000;
 
