@@ -28,7 +28,7 @@ useEffect(()=>{load()},[]);
     load()}catch(e){
         setError(e.response?.data?.message||"Unable to create user")
     }}
- return 
+ return (
  <div>
     <div className="toolbar">
         <div>
@@ -86,4 +86,5 @@ useEffect(()=>{load()},[]);
                 </div>
             </div>
         </div>
+)
 }

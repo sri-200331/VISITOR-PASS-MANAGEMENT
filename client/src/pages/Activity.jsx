@@ -6,7 +6,7 @@ export default function Activity(){
         api.get("/activity")
         .then(r=>setRows(r.data))
     },[]);
-    return
+    return(
      <div>
         <div className="toolbar">
             <div>
@@ -39,4 +39,6 @@ export default function Activity(){
                 </tbody>
             </table>
         </div>
-    </div>}
+    </div>
+)    
+}

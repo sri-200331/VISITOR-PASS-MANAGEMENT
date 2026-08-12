@@ -22,7 +22,7 @@ export default function Login() {
     finally { setLoading(false); }
   }
 
-  return
+  return(
    <div className="login-page">
     <section className="login-visual">
       <div className="visual-orb orb-one"></div>
@@ -73,4 +73,5 @@ export default function Login() {
       </form>
     </section>
   </div>
+  )
 }

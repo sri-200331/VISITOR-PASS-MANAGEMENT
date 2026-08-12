@@ -33,7 +33,7 @@ export default function Visitors(){
       e.response?.data?.message||"Action failed")
     }
   }
-  return 
+  return (
   <div>
     <div className="toolbar">
       <div>
@@ -112,4 +112,5 @@ export default function Visitors(){
  <div className="empty">No visitor records match your filters.</div>}
 </div>
 </div>
+)
 }

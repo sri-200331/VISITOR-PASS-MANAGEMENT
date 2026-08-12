@@ -17,7 +17,7 @@ export default function Dashboard() {
     ["Currently Inside", d.inside, "Active checked-in", UserCheck],
     ["Total Employees", d.employees, "Active employee accounts", Users]
   ];
-  return 
+  return (
   <div>
     <div className="welcome">
       <div>
@@ -79,4 +79,5 @@ export default function Dashboard() {
         </div>
     </div>
   </div>
+  )
 }

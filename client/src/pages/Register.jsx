@@ -34,7 +34,7 @@ export default function Register() {
       setError(err.response?.data?.message||"Unable to register visitor");
     }
   }
-  return
+  return(
    <div className="form-page">
     <div className="page-intro">
       <div className="page-icon">
@@ -82,4 +82,5 @@ export default function Register() {
     </div>
   </form>
   </div>
+  )
 }

@@ -3,8 +3,9 @@ const labels = {
   "checked-out": "Checked Out"
 };
 export default function StatusBadge({ status }) {
-  return
+  return(
    <span className={`status status-${status}`}>
     {labels[status] || status}
-   </span>;
+   </span>
+  )
 }

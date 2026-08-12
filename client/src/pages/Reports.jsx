@@ -13,7 +13,7 @@ export default function Reports(){
 
     },[]);
  const chart=Object.entries(data.stats).map(([name,value])=>({name,value}));
- return 
+ return (
  <div>
     <div className="toolbar"><div>
         <span className="eyebrow">INSIGHTS</span>
@@ -51,4 +51,6 @@ export default function Reports(){
         </div>
     </div>
 </div>
+
+)
 }

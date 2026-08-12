@@ -16,7 +16,8 @@ export default function Layout() {
     { to: "/activity", label: "Activity History", icon: Activity, roles: ["admin"] }
   ].filter(x => x.roles.includes(user.role));
 
-  return <div className="app-shell">
+  return (
+  <div className="app-shell">
     <aside className="sidebar">
       <div className="brand">
         <div className="brand-mark">VP</div>
@@ -57,4 +58,5 @@ export default function Layout() {
       <div className="content"><Outlet /></div>
     </main>
   </div>
+  )
 }
