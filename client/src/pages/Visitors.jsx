@@ -181,44 +181,7 @@ async function createVisitor(e) {
           />
         </div>
 
-        <div>
-          <label>Company</label>
-
-          <input
-            type="text"
-            name="company"
-            value={form.company}
-            onChange={handleChange}
-            placeholder="Company name"
-          />
-        </div>
-
-        <div>
-          <label>Employee *</label>
-
-          <select
-            name="employee"
-            value={form.employee}
-            onChange={handleChange}
-            required
-          >
-            <option value="">
-              Select employee
-            </option>
-
-            {employees.map(employee => (
-              <option
-                key={employee._id}
-                value={employee._id}
-              >
-                {employee.name}
-                {employee.department
-                  ? ` - ${employee.department}`
-                  : ""}
-              </option>
-            ))}
-          </select>
-        </div>
+      
 
         <div>
           <label>Visit Date *</label>
