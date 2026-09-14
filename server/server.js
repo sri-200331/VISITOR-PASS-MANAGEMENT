@@ -13,10 +13,22 @@ import activityRoutes from "./routes/activityRoutes.js";
 
 const app = express();
 
+const allowedOrigins = process.env.CLIENT_URL
+  ? process.env.CLIENT_URL.split(",").map((url) => url.trim().replace(/\/$/, ""))
+  : "*";
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL?.split(",") || "*",
-    credentials: false,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins === "*") return callback(null, true);
+      const cleanOrigin = origin.replace(/\/$/, "");
+      if (allowedOrigins.includes(cleanOrigin)) {
+        return callback(null, true);
+      }
+      // Fail explicitly if origin is not in allowed origins list
+      return callback(new Error(`CORS policy error: Origin ${origin} is not allowed.`));
+    },
+    credentials: true,
   })
 );
 
